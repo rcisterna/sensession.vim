@@ -1,5 +1,5 @@
 " Guarda una sesion
-function! SaveSession()
+function! sensession#SaveSession()
   if !exists('g:Session') | return 0 | endif
   if !isdirectory(g:SessionDir) | call mkdir(g:SessionDir, "p") | endif
 
@@ -8,7 +8,7 @@ function! SaveSession()
 endfunc
 
 " Crea una nueva sesion, y la carga si existe
-function! SetSession(session)
+function! sensession#SetSession(session)
   if exists('g:Session') | call SaveSession() | exe "bufdo! bdelete" | endif
   let g:Session = a:session
   let l:sname = g:SessionDir.g:Session.".session.vim"
@@ -26,13 +26,13 @@ function! SetSession(session)
 endfunc
 
 " Elimina las variables globales que indican que existe una sesion
-function! KillSession()
+function! sensession#KillSession()
   echo "La sesion ya no sera guardada al cerrar vim."
   unlet! g:Session g:SessionLoad
 endfunc
 
 " Elimina una sesion
-function! DeleteSession(session)
+function! sensession#DeleteSession(session)
   let l:sname = g:SessionDir.a:session.".session.vim"
 
   if !filereadable(l:sname)
