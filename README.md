@@ -6,7 +6,7 @@ distints proyectos (o distintas sesiones del mismo proyecto).
 
 ## Instalacion
 
-Puede ser instalado utilizadno Pathogen o Vundle. O simplememte copiando la
+Puede ser instalado utilizando Pathogen o Vundle. O simplememte copiando la
 carpeta ```plugin``` en $VIM
 
 ## Uso
