@@ -1,4 +1,4 @@
-let g:SessionDir = expand('%:p:h').'../sessions/'
+let g:SessionDir = expand('<sfile>:p:h').'/../sessions/'
 
 " Mantiene una lista de las sesiones
 function! UpdateSessionList()
