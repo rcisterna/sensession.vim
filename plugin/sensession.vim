@@ -1,5 +1,8 @@
 let g:SessionDir = expand('<sfile>:p:h').'/../sessions/'
 
+" Opciones necesarias para el correcto funcionamiento
+set sessionoptions=blank,buffers,curdir,globals,tabpages,winsize
+
 " ----- FUNCIONES
 
 " Guarda una sesion
