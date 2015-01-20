@@ -27,6 +27,11 @@ Una sesion se guarda automaticamente al cerrar Vim. Asegurate de no cerrar todas
 las ventanas, ya que solo se guardara la sesion con la ultima ventana abierta.
 En vez de eso, utiliza ```:qa``` o ```:wqa```.
 
+## Observaciones en la configuracion
+
+EL plugin maneja automaticamente ```sessionoptions```. Se recomienda no modificar
+esta opcion en las configuraciones personales
+
 ## Licencia
 
 El presente plugin se distribuye bajo los mismos terminos de Vim
