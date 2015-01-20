@@ -2,7 +2,7 @@
 
 Maneja las sesiones de Vim de forma intuitiva y simple. En terminos practicos,
 sensessions.vim permite manejar de forma sencilla distintas sesiones para
-distints proyectos (o distintas sesiones del mismo proyecto).
+distintos proyectos (o distintas sesiones del mismo proyecto).
 
 ## Instalacion
 
