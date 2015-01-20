@@ -9,19 +9,21 @@ endfunc
 
 " Crea una nueva sesion, y la carga si existe
 function! sensession#SetSession(session)
-  if exists('g:Session') | call SaveSession() | exe "bufdo! bdelete" | endif
+  if exists('g:Session') | call sensession#SaveSession()
+    \ | exe "bufdo! bdelete" | endif
   let g:Session = a:session
   let l:sname = g:SessionDir.g:Session.".session.vim"
 
   if !filereadable(l:sname)
     echo "Nueva sesion, creando archivos."
-    call SaveSession()
-    call UpdateSessionList()
+    call sensession#SaveSession()
+    call sensession#UpdateSessionList()
     return 0
   endif
 
   try | exe "source ".l:sname | return 1
-  catch | echo "Error cargando ".l:sname | call KillSession() | return 0
+  catch | echo "Error cargando ".l:sname
+    \ | call sensession#KillSession() | return 0
   endtry
 endfunc
 
@@ -41,10 +43,10 @@ function! sensession#DeleteSession(session)
   endif
 
   if (exists('g:Session') && g:Session == a:session)
-    call KillSession()
+    call sensession#KillSession()
   endif
 
-  try | call delete(l:sname) | call UpdateSessionList()
+  try | call delete(l:sname) | call sensession#UpdateSessionList()
     \ | echo "Eliminado ".l:sname | return 1
   catch | echo "Error eliminando ".l:sname | return 0
   endtry
